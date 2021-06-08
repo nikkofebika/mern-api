@@ -67,7 +67,7 @@ exports.delete = (req, res, next) => {
         throw err;
       }
 
-      removeFile(blog.image);
+      blog.image && removeFile(blog.image);
       return BlogPost.findByIdAndRemove(blogId);
     })
     .then((result) =>

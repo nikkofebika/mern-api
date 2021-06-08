@@ -9,7 +9,7 @@ router.delete("/:blogId", blogsController.delete);
 
 // CREATE -> POST
 router.post(
-  "/post",
+  "/",
   [
     body("title").isLength({ min: 5 }).withMessage("title tidak sesuai"),
     body("description")
@@ -21,7 +21,7 @@ router.post(
 
 // Update -> PUT
 router.put(
-  "/post/:blogId",
+  "/:blogId",
   [
     body("title").isLength({ min: 5 }).withMessage("title tidak sesuai"),
     body("description")
